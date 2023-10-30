@@ -108,7 +108,8 @@ public final class SquaremapSkins extends JavaPlugin {
                     JSONObject obj3 = (JSONObject) obj2.get("SKIN");
                     return (String) obj3.get("url");
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    return null;
+                    // e.printStackTrace();
                 }
             }
         }
@@ -121,7 +122,7 @@ public final class SquaremapSkins extends JavaPlugin {
             File file = new File(skinsDir, name.toLowerCase() + ".png");
             ImageIO.write(img, "png", file);
         } catch (Exception e) {
-            this.getSLF4JLogger().info("Could not save texture {} to {}", url, new File(skinsDir, name + ".png"), e);
+            // this.getSLF4JLogger().info("Could not save texture {} to {}", url, new File(skinsDir, name + ".png"), e);
         }
     }
 }
